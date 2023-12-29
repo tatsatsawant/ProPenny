@@ -1,4 +1,5 @@
 package com.ProPenny;
+import io.github.cdimascio.dotenv.Dotenv;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -8,6 +9,8 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         dataBase.getConnection();
+        Dotenv dotenv = Dotenv.load();
+        String adminPassword = dotenv.get("Admin_Password");
 
         if (dataBase.getConnection() == null) {
             System.out.println();
@@ -49,9 +52,10 @@ public class Main {
                             System.out.print("Enter The Password: ");
                             String passwordAdminEntered = scanner.next();
 
-                            if ("Tatsat@1234".equals(passwordAdminEntered)) {
+                            if ((adminPassword).equals(passwordAdminEntered)) {
                                 System.out.println("Welcome Tatsat Sawant!");
                             } else {
+                                System.out.println("------------------------");
                                 System.out.println("Password is incorrect");
                             }
                             break;

@@ -7,10 +7,6 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class SignUp {
-    private String username;
-    private String firstName;
-    private String lastName;
-    private String password;
 
     public void registerDetails() throws SQLException {
 
@@ -23,13 +19,13 @@ public class SignUp {
 
             System.out.println("------------------------");
             System.out.print("Enter Your First Name: ");
-            this.firstName = scanner.nextLine();
+            String firstName = scanner.nextLine();
 
             System.out.print("Enter Your Last Name: ");
-            this.lastName = scanner.nextLine();
+            String lastName = scanner.nextLine();
 
             System.out.print("Enter New Username: ");
-            this.username = scanner.nextLine();
+            String username = scanner.nextLine();
 
             String searchDB = String.format("SELECT * FROM userdata WHERE username = '%s';", username);
             statement = connect.createStatement();
@@ -43,7 +39,7 @@ public class SignUp {
             }else{
 
                 System.out.print("Enter Strong Password: ");
-                this.password = scanner.nextLine();
+                String password = scanner.nextLine();
 
                 System.out.print("Confirm Password: ");
                 String confirmPassword = scanner.nextLine();

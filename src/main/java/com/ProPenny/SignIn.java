@@ -5,15 +5,13 @@ import java.sql.Statement;
 import java.util.*;
 public class SignIn {
     private String username;
-    private String password;
     Scanner scanner = new Scanner(System.in);
 
 
-    public String getUserName(){
+    public void getUserName(){
 
         System.out.print("Enter Username: ");
         this.username = scanner.nextLine();
-        return username;
     }
 
 
@@ -33,7 +31,7 @@ public class SignIn {
                 String dbPassword = resultSet.getString("password");
 
                 System.out.print("Enter Password: ");
-                this.password = scanner.nextLine();
+                String password = scanner.nextLine();
 
                 if((dbPassword).equals(password)){
                     System.out.println("------------------------");
