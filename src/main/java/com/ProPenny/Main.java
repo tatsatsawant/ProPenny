@@ -25,8 +25,7 @@ public class Main {
                 System.out.println("------------------------");
                 System.out.println("1. Sign In For User.");
                 System.out.println("2. Sign Up To Register.");
-                System.out.println("3. Sign in For Admin");
-                System.out.println("4. Exit. \n------------------------");
+                System.out.println("3. Exit. \n------------------------");
                 System.out.print("Choice: ");
 
                 int choice;
@@ -48,20 +47,6 @@ public class Main {
                             break;
 
                         case 3:
-
-                            System.out.print("Enter The Password: ");
-                            String passwordAdminEntered = scanner.next();
-
-                            if ((adminPassword).equals(passwordAdminEntered)) {
-                                System.out.println("Welcome Tatsat Sawant!");
-                            } else {
-                                System.out.println("------------------------");
-                                System.out.println("Password is incorrect");
-                            }
-                            break;
-
-
-                        case 4:
                             System.out.println("Exiting The Application!");
                             System.exit(0);
 

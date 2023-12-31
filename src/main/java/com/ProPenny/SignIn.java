@@ -21,7 +21,7 @@ public class SignIn {
         ResultSet resultSet;
 
         try{
-            String searchDB = String.format("SELECT * FROM userdata WHERE username = '%s';",username);
+            String searchDB = String.format("SELECT * FROM users WHERE username = '%s';",username);
             statement = connect.createStatement();
             resultSet = statement.executeQuery(searchDB);
 

@@ -27,7 +27,7 @@ public class SignUp {
             System.out.print("Enter New Username: ");
             String username = scanner.nextLine();
 
-            String searchDB = String.format("SELECT * FROM userdata WHERE username = '%s';", username);
+            String searchDB = String.format("SELECT * FROM users WHERE username = '%s';", username);
             statement = connect.createStatement();
             ResultSet resultSet = statement.executeQuery(searchDB);
 
@@ -53,7 +53,7 @@ public class SignUp {
 
                 }else try {
                     //create row in userdata for new user
-                    String newUser = String.format("INSERT INTO userdata (firstName, lastName, username, password) VALUES ('%s', '%s', '%s', '%s');", firstName, lastName, username, password);
+                    String newUser = String.format("INSERT INTO users (firstName, lastName, username, password) VALUES ('%s', '%s', '%s', '%s');", firstName, lastName, username, password);
                     statement = connect.createStatement();
                     statement.executeUpdate(newUser);
 
